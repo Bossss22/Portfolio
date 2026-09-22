@@ -1,0 +1,663 @@
+
+import React from "react";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      {/* =====================================================
+          NAVIGATION
+      ===================================================== */}
+      <div className="nav-wrapper">
+        <nav className="navbar">
+          <a href="#" className="brand">
+            <div className="brand-icon">BA</div>
+            <span className="brand-text">Bilal Ahmad</span>
+          </a>
+
+          <ul className="nav-links">
+            <li>
+              <a href="#profile">Profile</a>
+            </li>
+
+            <li>
+              <a href="#skills">Expertise</a>
+            </li>
+
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+              <a href="#education">Education</a>
+            </li>
+
+            <li>
+              <a href="#contact" className="nav-contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+      <header className="hero">
+        <div className="container">
+          <div className="hero-layout">
+            <div className="hero-content">
+
+              {/* PROFILE IMAGE */}
+              <div className="hero-profile-image">
+                <img
+                  src="/profile.jpeg"
+                  alt="Bilal Ahmad"
+                  className="profile-photo"
+                />
+              </div>
+
+              <div className="eyebrow">
+                TMT ASSOCIATE · IT PROFESSIONAL
+              </div>
+
+              <h1>
+                Bilal Ahmad<span>.</span>
+              </h1>
+
+              <div className="hero-role">
+                TMT Advisory · Network Engineering · IT Infrastructure
+              </div>
+
+              <p className="hero-description">
+                IT and TMT professional with experience spanning
+                telecommunications, digital infrastructure, market research,
+                strategic analysis, network engineering, IT support and
+                technical operations.
+              </p>
+
+              <div className="hero-actions">
+                <a href="#experience" className="button button-primary">
+                  Explore Experience
+                </a>
+
+                <a href="#contact" className="button button-outline">
+                  Get In Touch
+                </a>
+              </div>
+            </div>
+
+            {/* PROFESSIONAL PROFILE PANEL */}
+            <div className="profile-panel">
+              <div className="profile-label">PROFESSIONAL PROFILE</div>
+
+              <h3>TMT Associate</h3>
+
+              <p>Strategy · Infrastructure · Technology</p>
+
+              <div className="profile-info">
+                <div className="info-row">
+                  <span>Current Role</span>
+                  <span>VTT Global</span>
+                </div>
+
+                <div className="info-row">
+                  <span>Industry</span>
+                  <span>TMT Advisory</span>
+                </div>
+
+                <div className="info-row">
+                  <span>Location</span>
+                  <span>Islamabad, Pakistan</span>
+                </div>
+
+                <div className="info-row">
+                  <span>Background</span>
+                  <span>IT & Network Engineering</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* =====================================================
+          PROFILE
+      ===================================================== */}
+      <section id="profile" className="intro-section">
+        <div className="container">
+          <div className="section-heading"></div>
+
+          <div>
+            <div className="section-number-profile">01 / PROFILE</div>
+
+            <h2 className="section-title-profile">
+              Technology meets
+              <br />
+              business strategy.
+            </h2>
+          </div>
+
+          <div>
+            <p className="intro-text">
+              I work across <span>TMT advisory</span>, IT infrastructure,
+              network engineering and <span>data-driven analysis</span>,
+              supporting projects that connect technology decisions with
+              commercial and operational outcomes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          EXPERTISE
+      ===================================================== */}
+      <section id="skills">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <div className="section-number">02 / EXPERTISE</div>
+
+              <h2 className="section-title">
+                Professional
+                <br />
+                capabilities.
+              </h2>
+            </div>
+          </div>
+
+          <div className="skills-layout">
+            <div className="skill-card">
+              <span className="skill-number">01</span>
+
+              <div className="skill-icon">TMT</div>
+
+              <h3>TMT Advisory</h3>
+
+              <p>
+                Market research, benchmarking, feasibility studies, strategic
+                analysis and technology strategy.
+              </p>
+            </div>
+
+            <div className="skill-card">
+              <span className="skill-number">03</span>
+
+              <div className="skill-icon">NT</div>
+
+              <h3>Network Engineering</h3>
+
+              <p>
+                FTTH/GPON, RF optimization, network optimization and
+                telecommunications.
+              </p>
+            </div>
+
+            <div className="skill-card">
+              <span className="skill-number">05</span>
+
+              <div className="skill-icon">DA</div>
+
+              <h3>Data Analytics</h3>
+
+              <p>
+                Data analytics, Power BI, Microsoft Excel and analytical
+                reporting.
+              </p>
+            </div>
+
+            <div className="skill-card">
+              <span className="skill-number">06</span>
+
+              <div className="skill-icon">PY</div>
+
+              <h3>Programming</h3>
+
+              <p>
+                Python, PyTorch and TensorFlow for technical and analytical
+                applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          PROFESSIONAL EXPERIENCE
+      ===================================================== */}
+      <section id="experience" className="experience-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <div className="section-number">03 / EXPERIENCE</div>
+
+              <h2 className="section-title">
+                Professional
+                <br />
+                journey.
+              </h2>
+            </div>
+
+            <p className="section-description">
+              Experience across TMT advisory, telecommunications, IT support,
+              network engineering and technical operations.
+            </p>
+          </div>
+
+          <div className="timeline">
+
+            {/* VTT GLOBAL */}
+            <div className="timeline-item current">
+              <div className="timeline-dot"></div>
+
+              <div className="timeline-card">
+                <div className="timeline-top">
+                  <h3>
+                    TMT Associate
+                    <span className="current-badge">Present</span>
+                  </h3>
+
+                  <span className="date">Aug 2026 – Present</span>
+                </div>
+
+                <div className="company">VTT Global Pvt. Limited</div>
+
+                <div className="location">
+                  Islamabad, Pakistan · On-site
+                </div>
+
+                <ul className="experience-list">
+                  <li>
+                    Support TMT advisory projects covering data centres,
+                    digital infrastructure, cloud, and telecommunications.
+                  </li>
+
+                  <li>
+                    Conduct market research, benchmarking, feasibility
+                    studies, and strategic analysis.
+                  </li>
+
+                  <li>
+                    Develop Excel-based financial and analytical models,
+                    presentations, and client deliverables.
+                  </li>
+
+                  <li>
+                    Contribute to business planning, project economics, and
+                    technology strategy.
+                  </li>
+
+                  <li>
+                    Coordinate with clients, industry stakeholders, and
+                    internal teams to deliver advisory engagements.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* PTCL */}
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+
+              <div className="timeline-card">
+                <div className="timeline-top">
+                  <h3>Network Engineer</h3>
+
+                  <span className="date">07/2022 – 08/2023</span>
+                </div>
+
+                <div className="company">
+                  Pakistan Telecommunication Company Limited (PTCL)
+                </div>
+
+                <div className="location">Islamabad, Pakistan</div>
+
+                <ul className="experience-list">
+                  <li>
+                    Managed a nationwide FTTH/GPON network inventory
+                    containing more than 10,000 nodes using enterprise SAP
+                    systems.
+                  </li>
+
+                  <li>
+                    Developed automated network health-check reports and
+                    interactive dashboards for outage analysis.
+                  </li>
+
+                  <li>
+                    Contributed to a 30% reduction in Mean Time to Resolution
+                    (MTTR).
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* USF */}
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+
+              <div className="timeline-card">
+                <div className="timeline-top">
+                  <h3>Network Engineering Intern</h3>
+
+                  <span className="date">02/2022 – 07/2022</span>
+                </div>
+
+                <div className="company">
+                  Universal Service Fund (USF)
+                </div>
+
+                <div className="location">Pakistan</div>
+
+                <ul className="experience-list">
+                  <li>
+                    Worked on BTS deployment and RF optimization projects for
+                    2G, 3G and 4G networks.
+                  </li>
+
+                  <li>
+                    Conducted drive-test analysis using TEMS Investigation.
+                  </li>
+
+                  <li>
+                    Analyzed geospatial data to support network coverage and
+                    signal quality improvements.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* IT SUPPORT ENGINEER */}
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+
+              <div className="timeline-card">
+                <div className="timeline-top">
+                  <h3>IT Support Engineer</h3>
+
+                  <span className="date">02/2020 – 01/2022</span>
+                </div>
+
+                <div className="company">
+                  Directorate of Housing, Falcon Complex
+                </div>
+
+                <div className="location">Rawalpindi, Pakistan</div>
+
+                <ul className="experience-list">
+                  <li>
+                    Provided comprehensive IT support and technical assistance
+                    across the organization.
+                  </li>
+
+                  <li>
+                    Installed, configured, troubleshot, operated and
+                    maintained computer systems, networks, printers, software
+                    and related IT equipment.
+                  </li>
+
+                  <li>
+                    Delivered direct technical assistance to users to ensure
+                    smooth day-to-day operations.
+                  </li>
+
+                  <li>
+                    Assisted in maintaining the smooth and efficient
+                    functioning of IT facilities and integrated systems.
+                  </li>
+
+                  <li>
+                    Executed assigned technical responsibilities with due
+                    diligence while maintaining a professional standard of
+                    conduct and performance.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 3RE ENERGY */}
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+
+              <div className="timeline-card">
+                <div className="timeline-top">
+                  <h3>Assistant Manager</h3>
+
+                  <span className="date">06/2019 – 12/2019</span>
+                </div>
+
+                <div className="company">3RE Energy Pakistan Ltd</div>
+
+                <div className="location">Pakistan</div>
+
+                <ul className="experience-list">
+                  <li>
+                    Directed technical operations for battery regeneration and
+                    energy storage systems.
+                  </li>
+
+                  <li>
+                    Implemented systematic testing procedures for battery
+                    performance.
+                  </li>
+
+                  <li>Achieved an 85% battery capacity recovery rate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FEATURED PROJECT
+      ===================================================== */}
+      <section id="projects" className="projects-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <div className="section-number">04 / FEATURED PROJECT</div>
+
+              <h2 className="section-title">
+                Strategy, business
+                <br />
+                planning & advisory.
+              </h2>
+            </div>
+          </div>
+
+          <div className="project-card">
+            <div className="project-header">
+              <div>
+                <div className="project-category">
+                  TMT Associate · VTT Global
+                </div>
+
+                <h3 className="project-title">
+                  Jazz DC Carve-Out: Strategy, Business Plan & Transaction
+                  Advisory
+                </h3>
+              </div>
+
+              <div className="project-date">Aug – Sep 2026</div>
+            </div>
+
+            <p className="project-description">
+              Worked on the joint <strong>VTT Global–Altman Solon</strong> team
+              advising <strong>Jazz</strong>, Pakistan's largest mobile
+              operator, on separating its data centre assets into a standalone
+              telco-neutral platform over a five-week engagement.
+              <br />
+              <br />
+              My work ran across the market and financial workstreams,
+              connecting primary market insights with the demand model,
+              business plan and financial model.
+            </p>
+
+            <div className="project-work">
+              <div className="project-work-item">
+                <span>Market Analysis</span>
+
+                <h4>Market & Demand Assessment</h4>
+
+                <p>
+                  Interviewed hyperscalers, enterprise customers and regulators
+                  to test real demand and validate commercial assumptions.
+                </p>
+              </div>
+
+              <div className="project-work-item">
+                <span>Financial</span>
+
+                <h4>Demand & Financial Modeling</h4>
+
+                <p>
+                  Fed market findings into a ten-year Pakistan demand and
+                  supply model, business plan and financial model.
+                </p>
+              </div>
+
+              <div className="project-work-item">
+                <span>Transaction Advisory</span>
+
+                <h4>Valuation & Funding</h4>
+
+                <p>
+                  Supported carve-out valuation, site feasibility analysis and
+                  assessment of potential REIT or PSX listing funding
+                  structures.
+                </p>
+              </div>
+            </div>
+
+            <div className="project-tags">
+              <span className="project-tag">TMT Strategy</span>
+              <span className="project-tag">Transaction Advisory</span>
+              <span className="project-tag">Business Planning</span>
+              <span className="project-tag">Financial Modeling</span>
+              <span className="project-tag">Market Research</span>
+              <span className="project-tag">Data Centres</span>
+              <span className="project-tag">Valuation</span>
+              <span className="project-tag">Pakistan TMT</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          EDUCATION
+      ===================================================== */}
+      <section id="education">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <div className="section-number">05 / EDUCATION</div>
+
+              <h2 className="section-title">
+                Academic
+                <br />
+                foundation.
+              </h2>
+            </div>
+          </div>
+
+          <div className="education-box">
+            <div className="education-label">Master's Degree</div>
+
+            <h3>Master of Information and Communication Engineering</h3>
+
+            <p className="university">
+              University of Science and Technology Beijing (USTB)
+              <br />
+              09/2023 – 06/2026
+            </p>
+
+            <div className="research">
+              Research Focus: Cybersecurity · Distributed Systems · Secure
+              Infrastructure
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
+      <section id="contact" className="contact-section">
+        <div className="container">
+          <div className="contact-box">
+            <div>
+              <h2>Let's connect.</h2>
+
+              <p>
+                Open to professional conversations, consulting opportunities,
+                technology projects and TMT-related engagements.
+              </p>
+            </div>
+
+            <div className="contact-details">
+              <a
+                href="mailto:baahmad2@gmail.com"
+                className="contact-item"
+              >
+                Email: baahmad2@gmail.com
+              </a>
+
+              <a href="tel:+923360016631" className="contact-item">
+                Phone: +92 336 0016631
+              </a>
+
+              <a
+                href="https://linkedin.com/in/bilalahmad-181911194"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-item"
+              >
+                LinkedIn → bilalahmad-181911194
+              </a>
+
+              <a
+                href="https://github.com/Bossss22"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-item"
+              >
+                GitHub → Bossss22
+              </a>
+
+              <a
+                href="https://orcid.org/0009-0005-6484-3773"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-item"
+              >
+                ORCID → 0009-0005-6484-3773
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+      <footer>
+        <div className="container">
+          <div className="footer-content">
+            <span>© 2026 Bilal Ahmad</span>
+
+            <span>TMT · IT · Networks · Infrastructure</span>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+export default App;
+

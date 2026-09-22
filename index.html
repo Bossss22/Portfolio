@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bilal Ahmad | TMT Associate & IT Professional</title>
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #07111f;
+            --bg-secondary: #0b1728;
+            --card: #0d1b2e;
+            --card-light: #10233a;
+
+            --primary: #38bdf8;
+            --primary-dark: #0ea5e9;
+
+            --white: #f8fafc;
+            --text: #cbd5e1;
+            --muted: #718096;
+
+            --border: rgba(148, 163, 184, 0.14);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(56, 189, 248, 0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(56, 189, 248, 0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 60px 60px;
+
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -200px;
+            right: -150px;
+
+            background: rgba(14, 165, 233, 0.08);
+
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .nav-wrapper {
+            position: fixed;
+
+            top: 20px;
+            left: 0;
+            right: 0;
+
+            z-index: 100;
+        }
+
+        .navbar {
+            width: min(1100px, 92%);
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 12px 14px 12px 20px;
+
+            background: rgba(7, 17, 31, 0.78);
+
+            border: 1px solid rgba(148, 163, 184, 0.15);
+
+            backdrop-filter: blur(18px);
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-weight: bold;
+
+            color: var(--white);
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            color: #04111e;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+        .brand-text {
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 3px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+
+            padding: 9px 13px;
+
+            border-radius: 30px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+
+            background: rgba(56, 189, 248, 0.09);
+        }
+
+        .nav-contact {
+            background: var(--primary) !important;
+
+            color: #03111c !important;
+
+            font-weight: bold;
+        }
+
+        .nav-contact:hover {
+            background: #7dd3fc !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 110px;
+        }
+
+        .hero-layout {
+            display: grid;
+
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 30px;
+            height: 1px;
+
+            background: var(--primary);
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            color: var(--white);
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-role {
+            font-size: 21px;
+
+            color: #dbeafe;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+        }
+
+        .hero-actions {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 35px;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 12px 21px;
+
+            border-radius: 7px;
+
+            border: 1px solid var(--border);
+
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .button-primary {
+            background: var(--primary);
+
+            color: #04111e;
+
+            border-color: var(--primary);
+
+            font-weight: bold;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+
+            background: #7dd3fc;
+        }
+
+        .button-outline {
+            color: var(--text);
+        }
+
+        .button-outline:hover {
+            border-color: var(--primary);
+
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           PROFILE PANEL
+        ===================================================== */
+
+        .profile-panel {
+            position: relative;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(16, 35, 58, 0.95),
+                    rgba(8, 18, 32, 0.95)
+                );
+
+            border-radius: 18px;
+
+            overflow: hidden;
+        }
+
+        .profile-panel::before {
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            right: -100px;
+            top: -100px;
+
+            background: rgba(56, 189, 248, 0.12);
+
+            border-radius: 50%;
+        }
+
+        .profile-label {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .profile-monogram {
+            width: 110px;
+            height: 110px;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #38bdf8,
+                    #0284c7
+                );
+
+            color: #03111c;
+
+            font-size: 38px;
+
+            font-weight: 800;
+
+            margin-bottom: 25px;
+        }
+
+        .profile-panel h3 {
+            color: white;
+
+            font-size: 25px;
+
+            margin-bottom: 5px;
+        }
+
+        .profile-panel > p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+        .profile-info {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+
+            border-top: 1px solid var(--border);
+
+            padding-top: 20px;
+        }
+
+        .info-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            font-size: 13px;
+        }
+
+        .info-row span:first-child {
+            color: var(--muted);
+        }
+
+        .info-row span:last-child {
+            color: #e2e8f0;
+
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            gap: 30px;
+
+            margin-bottom: 55px;
+        }
+
+        .section-number {
+            color: var(--primary);
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            color: white;
+
+            font-size: clamp(32px, 5vw, 48px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+        }
+
+        .section-description {
+            max-width: 450px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PROFILE
+        ===================================================== */
+
+        .intro-section {
+            background: rgba(11, 23, 40, 0.65);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intro-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .intro-text {
+            font-size: 23px;
+
+            line-height: 1.5;
+
+            color: #dbeafe;
+        }
+
+        .intro-text span {
+            color: var(--primary);
+        }
+
+        .intro-details {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .detail-card {
+            padding: 25px;
+
+            background: rgba(13, 27, 46, 0.8);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            transition: 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .detail-card strong {
+            display: block;
+
+            color: var(--primary);
+
+            font-size: 24px;
+
+            margin-bottom: 5px;
+        }
+
+        .detail-card span {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-layout {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .skill-card {
+            position: relative;
+
+            min-height: 190px;
+
+            padding: 28px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            transition: 0.3s ease;
+
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(56, 189, 248, 0.35);
+
+            background: var(--card-light);
+        }
+
+        .skill-number {
+            color: #334155;
+
+            font-size: 12px;
+
+            position: absolute;
+
+            top: 20px;
+            right: 22px;
+        }
+
+        .skill-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(56, 189, 248, 0.08);
+
+            border: 1px solid rgba(56, 189, 248, 0.15);
+
+            color: var(--primary);
+
+            border-radius: 8px;
+
+            margin-bottom: 25px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .skill-card h3 {
+            color: white;
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .experience-section {
+            background: rgba(11, 23, 40, 0.65);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline {
+            position: relative;
+
+            max-width: 950px;
+
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 20px;
+
+            top: 0;
+            bottom: 0;
+
+            width: 1px;
+
+            background: #1e3a56;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 65px;
+
+            margin-bottom: 45px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 12px;
+
+            top: 8px;
+
+            width: 17px;
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: var(--bg);
+
+            border: 3px solid var(--primary);
+
+            box-shadow:
+                0 0 0 5px rgba(56, 189, 248, 0.07);
+        }
+
+        .timeline-item.current .timeline-dot {
+            background: var(--primary);
+
+            box-shadow:
+                0 0 0 6px rgba(56, 189, 248, 0.10),
+                0 0 25px rgba(56, 189, 248, 0.25);
+        }
+
+        .timeline-card {
+            padding: 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .timeline-item.current .timeline-card {
+            border-color: rgba(56, 189, 248, 0.28);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(14, 35, 57, 0.95),
+                    rgba(13, 27, 46, 0.95)
+                );
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+
+            transform: translateX(5px);
+        }
+
+        .timeline-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-card h3 {
+            color: white;
+
+            font-size: 21px;
+        }
+
+        .date {
+            color: var(--primary);
+
+            font-size: 12px;
+
+            white-space: nowrap;
+        }
+
+        .company {
+            color: #94a3b8;
+
+            font-size: 14px;
+
+            margin-bottom: 4px;
+        }
+
+        .location {
+            color: #64748b;
+
+            font-size: 12px;
+
+            margin-bottom: 18px;
+        }
+
+        .current-badge {
+            display: inline-block;
+
+            margin-left: 8px;
+
+            padding: 3px 8px;
+
+            border-radius: 20px;
+
+            background: rgba(56, 189, 248, 0.08);
+
+            border: 1px solid rgba(56, 189, 248, 0.15);
+
+            color: var(--primary);
+
+            font-size: 10px;
+
+            letter-spacing: 0.8px;
+
+            text-transform: uppercase;
+        }
+
+        .experience-list {
+            list-style: none;
+        }
+
+        .experience-list li {
+            position: relative;
+
+            padding-left: 19px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+        .experience-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-list li::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 10px;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+        }
+
+
+        /* =====================================================
+           FEATURED PROJECT
+        ===================================================== */
+
+        .projects-section {
+            background: var(--bg);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-card {
+            position: relative;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(14, 35, 57, 0.95),
+                    rgba(8, 18, 32, 0.95)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            right: -140px;
+            top: -140px;
+
+            border-radius: 50%;
+
+            background: rgba(56, 189, 248, 0.08);
+        }
+
+        .project-header {
+            position: relative;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 30px;
+
+            margin-bottom: 30px;
+        }
+
+        .project-category {
+            color: var(--primary);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            color: white;
+
+            font-size: clamp(25px, 4vw, 38px);
+
+            line-height: 1.2;
+
+            max-width: 750px;
+        }
+
+        .project-date {
+            white-space: nowrap;
+
+            padding: 8px 13px;
+
+            border: 1px solid rgba(56, 189, 248, 0.2);
+
+            border-radius: 30px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .project-description {
+            position: relative;
+
+            color: #a8b5c7;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            max-width: 950px;
+
+            margin-bottom: 30px;
+        }
+
+        .project-description strong {
+            color: #e2e8f0;
+        }
+
+        .project-work {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .project-work-item {
+            padding: 22px;
+
+            background: rgba(7, 17, 31, 0.55);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            transition: 0.3s ease;
+        }
+
+        .project-work-item:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .project-work-item span {
+            display: block;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 9px;
+        }
+
+        .project-work-item h4 {
+            color: white;
+
+            font-size: 16px;
+
+            margin-bottom: 7px;
+        }
+
+        .project-work-item p {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-top: 30px;
+        }
+
+        .project-tag {
+            padding: 7px 12px;
+
+            border-radius: 30px;
+
+            background: rgba(56, 189, 248, 0.06);
+
+            border: 1px solid rgba(56, 189, 248, 0.14);
+
+            color: #93c5fd;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-box {
+            position: relative;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0e2238,
+                    #091523
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+        }
+
+        .education-box::after {
+            content: "MS";
+
+            position: absolute;
+
+            right: 30px;
+            bottom: -45px;
+
+            font-size: 180px;
+
+            font-weight: 900;
+
+            color: rgba(56, 189, 248, 0.035);
+        }
+
+        .education-label {
+            color: var(--primary);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .education-box h3 {
+            color: white;
+
+            font-size: clamp(25px, 4vw, 38px);
+
+            max-width: 750px;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+        }
+
+        .university {
+            color: #94a3b8;
+
+            font-size: 16px;
+
+            margin-bottom: 25px;
+        }
+
+        .research {
+            display: inline-block;
+
+            padding: 8px 13px;
+
+            border: 1px solid rgba(56, 189, 248, 0.2);
+
+            border-radius: 30px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+
+        /* =====================================================
+           LANGUAGES
+        ===================================================== */
+
+        .language-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .language-card {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 12px;
+
+            transition: 0.3s ease;
+        }
+
+        .language-card:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .language-card h3 {
+            color: white;
+
+            margin-bottom: 5px;
+        }
+
+        .language-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-section {
+            padding-bottom: 80px;
+        }
+
+        .contact-box {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            padding: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(14, 165, 233, 0.12),
+                    rgba(13, 27, 46, 0.8)
+                );
+
+            border: 1px solid rgba(56, 189, 248, 0.18);
+
+            border-radius: 20px;
+        }
+
+        .contact-box h2 {
+            color: white;
+
+            font-size: 40px;
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-box > div > p {
+            color: var(--muted);
+
+            max-width: 450px;
+        }
+
+        .contact-details {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            justify-content: center;
+        }
+
+        .contact-item {
+            padding: 15px 18px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            background: rgba(7, 17, 31, 0.45);
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 25px 0;
+
+            color: #526174;
+
+            font-size: 12px;
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .nav-links a {
+                padding: 8px 9px;
+
+                font-size: 12px;
+            }
+
+            .hero-layout {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .profile-panel {
+                max-width: 500px;
+            }
+
+            .project-work {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .skills-layout {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nav-wrapper {
+                top: 10px;
+            }
+
+            .navbar {
+                padding: 10px 12px 10px 15px;
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links li:not(:last-child) {
+                display: none;
+            }
+
+            .nav-links a {
+                padding: 9px 15px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+
+                letter-spacing: -3px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .skills-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-details {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-description {
+                margin-top: 15px;
+            }
+
+            .timeline-top {
+                display: block;
+            }
+
+            .date {
+                display: block;
+
+                margin-top: 5px;
+            }
+
+            .project-card {
+                padding: 30px;
+            }
+
+            .project-header {
+                display: block;
+            }
+
+            .project-date {
+                display: inline-block;
+
+                margin-top: 15px;
+            }
+
+            .project-work {
+                grid-template-columns: 1fr;
+            }
+
+            .education-box {
+                padding: 30px;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+
+            .contact-box h2 {
+                font-size: 32px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+
+                gap: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<div class="nav-wrapper">
+
+    <nav class="navbar">
+
+        <a href="#" class="brand">
+
+            <div class="brand-icon">
+                BA
+            </div>
+
+            <span class="brand-text">
+                Bilal Ahmad
+            </span>
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#profile">
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Expertise
+                </a>
+            </li>
+
+            <li>
+                <a href="#experience">
+                    Experience
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#education">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" class="nav-contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</div>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-layout">
+
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    TMT ASSOCIATE · IT PROFESSIONAL
+                </div>
+
+
+                <h1>
+                    Bilal<br>
+                    <span>Ahmad.</span>
+                </h1>
+
+
+                <div class="hero-role">
+                    TMT Advisory · Network Engineering · IT Infrastructure
+                </div>
+
+
+                <p class="hero-description">
+
+                    IT and TMT professional with experience spanning
+                    telecommunications, digital infrastructure,
+                    market research, strategic analysis, network
+                    engineering, IT support and technical operations.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#experience"
+                       class="button button-primary">
+
+                        Explore Experience
+
+                    </a>
+
+                    <a href="#contact"
+                       class="button button-outline">
+
+                        Get In Touch
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROFILE PANEL -->
+
+            <div class="profile-panel">
+
+                <div class="profile-label">
+                    PROFESSIONAL PROFILE
+                </div>
+
+
+                <div class="profile-monogram">
+                    BA
+                </div>
+
+
+                <h3>
+                    TMT Associate
+                </h3>
+
+                <p>
+                    Strategy · Infrastructure · Technology
+                </p>
+
+
+                <div class="profile-info">
+
+                    <div class="info-row">
+
+                        <span>
+                            Current Role
+                        </span>
+
+                        <span>
+                            VTT Global
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Industry
+                        </span>
+
+                        <span>
+                            TMT Advisory
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Location
+                        </span>
+
+                        <span>
+                            Islamabad, Pakistan
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>
+                            Background
+                        </span>
+
+                        <span>
+                            IT & Network Engineering
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+
+<section id="profile" class="intro-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    01 / PROFILE
+                </div>
+
+                <h2 class="section-title">
+                    Technology meets<br>
+                    business strategy.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                A multidisciplinary background combining
+                technology, telecommunications, infrastructure,
+                analytics and strategic advisory.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="intro-grid">
+
+
+            <div>
+
+                <p class="intro-text">
+
+                    I work across
+                    <span>TMT advisory</span>,
+                    IT infrastructure, network engineering and
+                    <span>data-driven analysis</span>,
+                    supporting projects that connect technology
+                    decisions with commercial and operational
+                    outcomes.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="intro-details">
+
+
+                <div class="detail-card">
+
+                    <strong>
+                        TMT
+                    </strong>
+
+                    <span>
+                        Strategy & Advisory
+                    </span>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <strong>
+                        10K+
+                    </strong>
+
+                    <span>
+                        FTTH / GPON nodes managed
+                    </span>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <strong>
+                        30%
+                    </strong>
+
+                    <span>
+                        MTTR reduction through reporting
+                    </span>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <strong>
+                        IT
+                    </strong>
+
+                    <span>
+                        Infrastructure & Technical Support
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERTISE
+===================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    02 / EXPERTISE
+                </div>
+
+                <h2 class="section-title">
+                    Professional<br>
+                    capabilities.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                Combining strategic advisory, financial analysis,
+                telecommunications, IT infrastructure and
+                technical operations experience.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="skills-layout">
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    01
+                </span>
+
+                <div class="skill-icon">
+                    TMT
+                </div>
+
+                <h3>
+                    TMT Advisory
+                </h3>
+
+                <p>
+                    Market research, benchmarking, feasibility
+                    studies, strategic analysis and technology
+                    strategy.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    02
+                </span>
+
+                <div class="skill-icon">
+                    FM
+                </div>
+
+                <h3>
+                    Financial Modeling
+                </h3>
+
+                <p>
+                    Excel-based financial and analytical models,
+                    project economics and business planning.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    03
+                </span>
+
+                <div class="skill-icon">
+                    NT
+                </div>
+
+                <h3>
+                    Network Engineering
+                </h3>
+
+                <p>
+                    FTTH/GPON, RF optimization, network
+                    optimization and telecommunications.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    04
+                </span>
+
+                <div class="skill-icon">
+                    IT
+                </div>
+
+                <h3>
+                    IT Support
+                </h3>
+
+                <p>
+                    Technical support, computer systems,
+                    networks, printers, software and IT
+                    equipment troubleshooting.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    05
+                </span>
+
+                <div class="skill-icon">
+                    DA
+                </div>
+
+                <h3>
+                    Data Analytics
+                </h3>
+
+                <p>
+                    Data analytics, Power BI, Microsoft Excel
+                    and analytical reporting.
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    06
+                </span>
+
+                <div class="skill-icon">
+                    PY
+                </div>
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    Python, PyTorch and TensorFlow for technical
+                    and analytical applications.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROFESSIONAL EXPERIENCE
+===================================================== -->
+
+<section id="experience" class="experience-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    03 / EXPERIENCE
+                </div>
+
+                <h2 class="section-title">
+                    Professional<br>
+                    journey.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                Experience across TMT advisory,
+                telecommunications, IT support,
+                network engineering and technical operations.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="timeline">
+
+
+            <!-- =================================================
+                 VTT GLOBAL
+            ================================================== -->
+
+            <div class="timeline-item current">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-top">
+
+                        <h3>
+                            TMT Associate
+
+                            <span class="current-badge">
+                                Present
+                            </span>
+
+                        </h3>
+
+                        <span class="date">
+                            Aug 2026 – Present
+                        </span>
+
+                    </div>
+
+
+                    <div class="company">
+                        VTT Global Pvt. Limited
+                    </div>
+
+
+                    <div class="location">
+                        Islamabad, Pakistan · On-site
+                    </div>
+
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Support TMT advisory projects covering
+                            data centres, digital infrastructure,
+                            cloud, and telecommunications.
+                        </li>
+
+                        <li>
+                            Conduct market research, benchmarking,
+                            feasibility studies, and strategic
+                            analysis.
+                        </li>
+
+                        <li>
+                            Develop Excel-based financial and
+                            analytical models, presentations, and
+                            client deliverables.
+                        </li>
+
+                        <li>
+                            Contribute to business planning,
+                            project economics, and technology
+                            strategy.
+                        </li>
+
+                        <li>
+                            Coordinate with clients, industry
+                            stakeholders, and internal teams to
+                            deliver advisory engagements.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PTCL
+            ================================================== -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-top">
+
+                        <h3>
+                            Network Engineer
+                        </h3>
+
+                        <span class="date">
+                            07/2022 – 08/2023
+                        </span>
+
+                    </div>
+
+
+                    <div class="company">
+                        Pakistan Telecommunication Company Limited (PTCL)
+                    </div>
+
+
+                    <div class="location">
+                        Islamabad, Pakistan
+                    </div>
+
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Managed a nationwide FTTH/GPON network
+                            inventory containing more than 10,000
+                            nodes using enterprise SAP systems.
+                        </li>
+
+                        <li>
+                            Developed automated network health-check
+                            reports and interactive dashboards for
+                            outage analysis.
+                        </li>
+
+                        <li>
+                            Contributed to a 30% reduction in
+                            Mean Time to Resolution (MTTR).
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 USF
+            ================================================== -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-top">
+
+                        <h3>
+                            Network Engineering Intern
+                        </h3>
+
+                        <span class="date">
+                            02/2022 – 07/2022
+                        </span>
+
+                    </div>
+
+
+                    <div class="company">
+                        Universal Service Fund (USF)
+                    </div>
+
+
+                    <div class="location">
+                        Pakistan
+                    </div>
+
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Worked on BTS deployment and RF
+                            optimization projects for 2G, 3G
+                            and 4G networks.
+                        </li>
+
+                        <li>
+                            Conducted drive-test analysis using
+                            TEMS Investigation.
+                        </li>
+
+                        <li>
+                            Analyzed geospatial data to support
+                            network coverage and signal quality
+                            improvements.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 IT SUPPORT ENGINEER
+            ================================================== -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-top">
+
+                        <h3>
+                            IT Support Engineer
+                        </h3>
+
+                        <span class="date">
+                            02/2020 – 01/2022
+                        </span>
+
+                    </div>
+
+
+                    <div class="company">
+                        Directorate of Housing, Falcon Complex
+                    </div>
+
+
+                    <div class="location">
+                        Rawalpindi, Pakistan
+                    </div>
+
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Provided comprehensive IT support and
+                            technical assistance across the
+                            organization.
+                        </li>
+
+                        <li>
+                            Installed, configured, troubleshot,
+                            operated and maintained computer
+                            systems, networks, printers, software
+                            and related IT equipment.
+                        </li>
+
+                        <li>
+                            Delivered direct technical assistance
+                            to users to ensure smooth day-to-day
+                            operations.
+                        </li>
+
+                        <li>
+                            Assisted in maintaining the smooth and
+                            efficient functioning of IT facilities
+                            and integrated systems.
+                        </li>
+
+                        <li>
+                            Executed assigned technical
+                            responsibilities with due diligence
+                            while maintaining a professional
+                            standard of conduct and performance.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 3RE ENERGY
+            ================================================== -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-top">
+
+                        <h3>
+                            Assistant Manager
+                        </h3>
+
+                        <span class="date">
+                            06/2019 – 12/2019
+                        </span>
+
+                    </div>
+
+
+                    <div class="company">
+                        3RE Energy Pakistan Ltd
+                    </div>
+
+
+                    <div class="location">
+                        Pakistan
+                    </div>
+
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Directed technical operations for
+                            battery regeneration and energy
+                            storage systems.
+                        </li>
+
+                        <li>
+                            Implemented systematic testing
+                            procedures for battery performance.
+                        </li>
+
+                        <li>
+                            Achieved an 85% battery capacity
+                            recovery rate.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURED PROJECT
+===================================================== -->
+
+<section id="projects" class="projects-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    04 / FEATURED PROJECT
+                </div>
+
+                <h2 class="section-title">
+                    Strategy, business<br>
+                    planning & advisory.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                Selected TMT advisory engagement involving
+                market analysis, demand modeling, business
+                planning and transaction advisory.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+
+            <div class="project-header">
+
+
+                <div>
+
+                    <div class="project-category">
+                        TMT Associate · VTT Global
+                    </div>
+
+
+                    <h3 class="project-title">
+
+                        Jazz DC Carve-Out:
+                        Strategy, Business Plan &
+                        Transaction Advisory
+
+                    </h3>
+
+                </div>
+
+
+                <div class="project-date">
+                    Aug – Sep 2026
+                </div>
+
+
+            </div>
+
+
+
+            <p class="project-description">
+
+                Worked on the joint
+                <strong>VTT Global–Altman Solon</strong>
+                team advising
+                <strong>Jazz</strong>, Pakistan's largest
+                mobile operator, on separating its data centre
+                assets into a standalone telco-neutral platform
+                over a five-week engagement.
+
+                My work ran across the market and financial
+                workstreams, connecting primary market insights
+                with the demand model, business plan and
+                financial model.
+
+            </p>
+
+
+
+            <div class="project-work">
+
+
+                <div class="project-work-item">
+
+                    <span>
+                        Market Analysis
+                    </span>
+
+                    <h4>
+                        Market & Demand Assessment
+                    </h4>
+
+                    <p>
+
+                        Interviewed hyperscalers, enterprise
+                        customers and regulators to test real
+                        demand and validate commercial
+                        assumptions.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="project-work-item">
+
+                    <span>
+                        Financial
+                    </span>
+
+                    <h4>
+                        Demand & Financial Modeling
+                    </h4>
+
+                    <p>
+
+                        Fed market findings into a ten-year
+                        Pakistan demand and supply model,
+                        business plan and financial model.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="project-work-item">
+
+                    <span>
+                        Transaction Advisory
+                    </span>
+
+                    <h4>
+                        Valuation & Funding
+                    </h4>
+
+                    <p>
+
+                        Supported carve-out valuation, site
+                        feasibility analysis and assessment
+                        of potential REIT or PSX listing
+                        funding structures.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="project-tags">
+
+                <span class="project-tag">
+                    TMT Strategy
+                </span>
+
+                <span class="project-tag">
+                    Transaction Advisory
+                </span>
+
+                <span class="project-tag">
+                    Business Planning
+                </span>
+
+                <span class="project-tag">
+                    Financial Modeling
+                </span>
+
+                <span class="project-tag">
+                    Market Research
+                </span>
+
+                <span class="project-tag">
+                    Data Centres
+                </span>
+
+                <span class="project-tag">
+                    Valuation
+                </span>
+
+                <span class="project-tag">
+                    Pakistan TMT
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    05 / EDUCATION
+                </div>
+
+                <h2 class="section-title">
+                    Academic<br>
+                    foundation.
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="education-box">
+
+
+            <div class="education-label">
+                Master's Degree
+            </div>
+
+
+            <h3>
+                Master of Information and
+                Communication Engineering
+            </h3>
+
+
+            <p class="university">
+
+                University of Science and Technology Beijing
+                (USTB)
+
+                <br>
+
+                09/2023 – 06/2026
+
+            </p>
+
+
+            <div class="research">
+
+                Research Focus:
+                Cybersecurity · Distributed Systems ·
+                Secure Infrastructure
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LANGUAGES
+===================================================== -->
+
+<section id="languages">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    06 / LANGUAGES
+                </div>
+
+                <h2 class="section-title">
+                    Communication.
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="language-grid">
+
+
+            <div class="language-card">
+
+                <h3>
+                    English
+                </h3>
+
+                <p>
+                    Professional Working Proficiency
+                </p>
+
+            </div>
+
+
+            <div class="language-card">
+
+                <h3>
+                    Urdu
+                </h3>
+
+                <p>
+                    Native / Professional Proficiency
+                </p>
+
+            </div>
+
+
+            <div class="language-card">
+
+                <h3>
+                    Punjabi
+                </h3>
+
+                <p>
+                    Professional Proficiency
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container">
+
+
+        <div class="contact-box">
+
+
+            <div>
+
+                <h2>
+                    Let's connect.
+                </h2>
+
+
+                <p>
+
+                    Open to professional conversations,
+                    consulting opportunities, technology
+                    projects and TMT-related engagements.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-details">
+
+
+                <a href="mailto:baahmad2@gmail.com"
+                   class="contact-item">
+
+                    Email:
+                    baahmad2@gmail.com
+
+                </a>
+
+
+                <a href="tel:+923360016631"
+                   class="contact-item">
+
+                    Phone:
+                    +92 336 0016631
+
+                </a>
+
+
+                <a href="https://linkedin.com/in/bilalahmad-181911194"
+                   target="_blank"
+                   class="contact-item">
+
+                    LinkedIn →
+                    bilalahmad-181911194
+
+                </a>
+
+
+                <a href="https://github.com/Bossss22"
+                   target="_blank"
+                   class="contact-item">
+
+                    GitHub →
+                    Bossss22
+
+                </a>
+
+
+                <a href="https://orcid.org/0009-0005-6484-3773"
+                   target="_blank"
+                   class="contact-item">
+
+                    ORCID →
+                    0009-0005-6484-3773
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <span>
+                © 2026 Bilal Ahmad
+            </span>
+
+            <span>
+                TMT · IT · Networks · Infrastructure
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
